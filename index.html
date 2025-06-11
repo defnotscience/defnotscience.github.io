@@ -39,6 +39,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 1rem 0;
+            position: relative;
         }
 
         .logo {
@@ -48,24 +49,33 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #e0e0e0;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .nav-links a:hover {
-            color: #8a2be2;
+            color: #ffffff;
+            background: rgba(138, 43, 226, 0.2);
+            transform: translateY(-2px);
         }
 
         .nav-links a::after {
@@ -74,9 +84,31 @@
             width: 0;
             height: 2px;
             bottom: -5px;
-            left: 0;
+            left: 50%;
             background: linear-gradient(45deg, #8a2be2, #9932cc);
-            transition: width 0.3s ease;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: linear-gradient(45deg, #8a2be2, #9932cc);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
         }
 
         .nav-links a:hover::after {
@@ -241,7 +273,40 @@
             }
             
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: rgba(15, 15, 25, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: right 0.3s ease;
+                border-top: 1px solid rgba(138, 43, 226, 0.3);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .nav-links a {
+                font-size: 1.3rem;
+                padding: 1rem 2rem;
+                width: 200px;
+                text-align: center;
+                border: 1px solid rgba(138, 43, 226, 0.3);
+                border-radius: 15px;
+            }
+
+            .nav-toggle {
+                display: flex;
             }
             
             .contact-info {
@@ -279,11 +344,16 @@
     <header>
         <nav class="container">
             <div class="logo">ByteSU</div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -360,14 +430,25 @@
             });
         }
 
+        function toggleNav() {
+            const navLinks = document.getElementById('navLinks');
+            const navToggle = document.getElementById('navToggle');
+            navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        }
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                const navLinks = document.getElementById('navLinks');
+                navLinks.classList.remove('active');
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
         });
+
+        document.getElementById('navToggle').addEventListener('click', toggleNav);
 
         document.addEventListener('DOMContentLoaded', createParticles);
 
