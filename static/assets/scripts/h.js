@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 let splashtext = [
   'Thanks for using the site',
   'Check out the settings page',
-  'Make sure to star the Github Repo!'
+  'Make sure to bookmark or check the google doc for updated link!'
 ]
 
 document.getElementById('splash').innerHTML = splashtext[Math.floor(Math.random() * splashtext.length)]
