@@ -187,12 +187,6 @@
     "categories": ["all", "media"]
   },
   {
-    "name": "Spotify",
-    "image": "/assets/media/icons/spotify.webp",
-    "categories": ["all", "media"],
-    "error": true
-  },
-  {
     "name": "Telegram",
     "link": "https://web.telegram.org/",
     "image": "/assets/media/icons/telegram.webp",
@@ -233,13 +227,6 @@
     "link": "https://y8.com/",
     "image": "/assets/media/icons/y8.webp",
     "categories": ["all", "game"]
-  },
-  {
-    "name": "YouTube",
-    "image": "/assets/media/icons/youtube.webp",
-    "categories": ["all", "social", "stream", "media"],
-    "error": true,
-    "say": "YouTube is currently not working. Use Invidious Instead."
   },
   {
     "name": "YouTube (Invidious)",
@@ -326,12 +313,6 @@
     "partial": "true"
   },
   {
-    "name": "Snapchat",
-    "image": "/assets/media/icons/snap.webp",
-    "categories": ["all", "social", "message", "media"],
-    "error": "true"
-  },
-  {
     "name": "W3Schools",
     "link": "https://www.w3schools.com",
     "image": "/assets/media/icons/W3Schools.png",
@@ -342,11 +323,5 @@
     "link": "https://www.newgrounds.com",
     "image": "/assets/media/icons/ng.png",
     "categories": ["all", "social", "game", "media"]
-  },
-  {
-    "name": "Instagram",
-    "image": "/assets/media/icons/insta.webp",
-    "categories": ["all", "social", "message", "media"],
-    "error": "true"
   }
 ]
