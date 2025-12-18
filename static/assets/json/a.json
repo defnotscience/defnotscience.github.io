@@ -229,8 +229,8 @@
     "categories": ["all", "game"]
   },
   {
-    "name": "YouTube (Invidious)",
-    "link": "https://vid.puffyan.us/",
+    "name": "YouTube",
+    "link": "https://inv.nadeko.net",
     "image": "/assets/media/icons/youtube.webp",
     "categories": ["all", "social", "stream", "media"]
   },
