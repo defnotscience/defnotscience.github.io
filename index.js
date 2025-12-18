@@ -9,7 +9,8 @@ const __dirname = process.cwd()
 const server = http.createServer()
 const app = express(server)
 const bareServer = createBareServer('/o/')
-const PORT = process.env.PORT || 8080
+// WHEN PORT ERRORS CHANGE THE PORT BELOW, IF LINK BLOCKED CREATE A NEW CODESPACE
+const PORT = process.env.PORT || 3000
 if (config.challenge) {
   console.log('Password protection is enabled. Usernames are: ' + Object.keys(config.users))
   console.log('Passwords are: ' + Object.values(config.users))
