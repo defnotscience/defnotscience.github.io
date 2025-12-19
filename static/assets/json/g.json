@@ -337,7 +337,7 @@
     "image": "/assets/media/icons/nealfun.webp",
     "categories": ["all"],
     "error": "true",
-    "say": "Neal.fun does not work on Interstellar because of Cloudflare protection."
+    "say": "Neal.fun does not work on VoidPlay because of Cloudflare protection."
   },
   {
     "name": "YoHoHo.io",
@@ -1479,7 +1479,7 @@
     "image": "/assets/media/icons/tamingio.webp",
     "categories": ["all"],
     "error": "true",
-    "say": "Taming.io is currently broken on the proxy and will crash Interstellar when attempted to load."
+    "say": "Taming.io is currently broken on the proxy and will crash VoidPlay when attempted to load."
   },
   {
     "name": "Temple of Boom",
