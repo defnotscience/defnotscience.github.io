@@ -15,7 +15,7 @@ if (form && input) {
 function processUrl(value, path) {
   let url = value.trim()
   const engine = localStorage.getItem('engine')
-  const searchUrl = engine ? engine : 'https://duckduckgo.com/?ia='
+  const searchUrl = engine ? engine : 'https://duckduckgo.com/?q='
   if (!isUrl(url)) {
     url = searchUrl + url
   } else if (!(url.startsWith('https://') || url.startsWith('http://'))) {
